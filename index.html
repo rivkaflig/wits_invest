@@ -3,68 +3,104 @@
 
     <head>
         <title>GrowVest</title>
-        <link rel="favicon" type="image/svg+xml" href="favicon.svg">
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
         <link rel="stylesheet" href="styles.css">
-        <script src=" "></script>
+        <script src="script.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     </head>
 
     <body>
 
-        <header></header>
-
-            <h1>GrowVest</h1>
-            <h2>Visualize your wealth, plan your future, and unlock your financial potential</h2>
-        
+        <header class="bg-primary text-white text-center py-5">
+            <h1 class="display-4">GrowVest</h1>
+            <p class="lead">Visualize your wealth, plan your future, and unlock your financial potential.</p>
         </header>
 
-        <br/>
+            <br/>
         
-        <section>
-            <p><strong>Welcome to GrowVest – Your Investment Growth Calculator</strong></p>
+        <div class="container">
+            <section>
+                <p><strong>Welcome to GrowVest – Your Investment Growth Calculator</strong></p>
+                
+                <p>Planning for the future starts today! With GrowVest, 
+                you can easily estimate how much your investments will 
+                grow by the time you retire. Our simple yet powerful 
+                calculator helps you visualize your financial future and 
+                make informed decisions.</p>
+            </section>
+
+            <br/>
             
-            <p>Planning for the future starts today! With GrowVest, 
-            you can easily estimate how much your investments will 
-            grow by the time you retire. Our simple yet powerful 
-            calculator helps you visualize your financial future and 
-            make informed decisions.</p>
-        </section>
+            <section>
+                <p><strong>How It Works</strong></p>
+                
+                <ol id="How">
+                    <li><strong>Enter Your Initial Investment:</strong> Start by inputting the amount of money you plan to invest.</li>
+                    <li><strong>Set Your Annual Interest Rate:</strong> Provide an estimated annual return percentage based on your investment strategy.</li>
+                    <li><strong>Choose Your Retirement Year:</strong> Select the year you plan to retire, and we’ll calculate your potential returns.</li>
+                    <li><strong>See Your Results:</strong> Our calculator uses the power of compound interest to estimate how much your investment could grow over time.</li>
+                </ol>
+            </section>
 
-        <br/>
-        
-        <section>
-            <p><strong>How It Works</strong></p>
+            <br/>
             
-            <ol id="How">
-                <li><strong>Enter Your Initial Investment:</strong> Start by inputting the amount of money you plan to invest.</li>
-                <li><strong>Set Your Annual Interest Rate:</strong> Provide an estimated annual return percentage based on your investment strategy.</li>
-                <li><strong>Choose Your Retirement Year:</strong> Select the year you plan to retire, and we’ll calculate your potential returns.</li>
-                <li><strong>See Your Results:</strong> Our calculator uses the power of compound interest to estimate how much your investment could grow over time.</li>
-            </ol>
-        </section>
+            <section>
+                <p><strong>Why Use GrowVest?</strong></p>
 
-        <br/>
-        
-        <section>
-            <p><strong>Why Use GrowVest?</strong></p>
+                <ul id="Why">
+                    <li><strong>Simple & Fast:</strong> Get instant results with just a few clicks.</li>
+                    <li><strong>Plan With Confidence:</strong> Understand the potential impact of long-term investing.</li>
+                    <li><strong>Make Smarter Decisions:</strong> Adjust your inputs to see how different scenarios affect your future wealth.</li>
+                </ul>
+            </section>
 
-            <ul id="Why">
-                <li><strong>Simple & Fast:</strong> Get instant results with just a few clicks.</li>
-                <li><strong>Plan With Confidence:</strong> Understand the potential impact of long-term investing.</li>
-                <li><strong>Make Smarter Decisions:</strong> Adjust your inputs to see how different scenarios affect your future wealth.</li>
-            </ul>
-        </section>
+            <br/>
+        
+        </div>
+        
+        <div class="container text-center my-3">
+            <h3 class="fw-bold">Start planning for the future you deserve!</h3>
+            <p>Use the GrowVest calculator now and take control of your financial journey.</p>
+        </div>
 
-        <br/>
-        <hr/>
-        
-        <section>
-            <p>Start planning for the future you deserve—use the GrowVest calculator now and take control of your financial journey!</p>
-        </section>
-        
-        <footer>
-            <p> &copy; RFlig | <a href="mailto: rcflig@wits.edu">rcflig@wits.edu</a></p>
+        <form onsubmit="return getCompoundInterest()">
+        <div class="container my-5">
+            <h3 class="text-center fw-bold">Investment Calculator</h3>
+            <div class="card shadow p-4">
+                <form>
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" class="form-control">
+                        
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="form-control">
+                        
+                    <label for="initial" class="form-label">Initial Investment</label>
+                    <input type="number" id="initial" class="form-control">
+                        
+                    <label for="annual" class="form-label">Annual Interest Rate</label>
+                    <input type="number" id="annual" class="form-control">
+                        
+                    <label for="year" class="form-label">Year of Retirement</label>
+                    <input type="number" id="year" class="form-control">
+                       
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg mt-3">Calculate</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </form>
+
+        <div id="result" class="alert alert-success mt-3" style="display: none;">
+        </div>
+
+
+        <footer class="bg-primary text-white text-center py-3">
+            <p>&copy; 2025 GrowVest | <a href="mailto:rcflig@wits.edu" class="text-white">rcflig@wits.edu</a></p>
         </footer>
-
+    
     </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
 </html>
